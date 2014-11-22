@@ -13,16 +13,20 @@ class User(Document):
         'password': unicode,
         'points': int,
         'progress': [unicode],
-        'spending_entries': [{
+        'entries': [{
             'date': datetime,
-            'school': float,
-            'essentials': float,
-            'snacks': float,
-            'gas': float,
-            'clothing': float,
-            'recreation': float,
-            'car': float,
-            'college': float
+            'spending': {
+                'school': float,
+                'essentials': float,
+                'snacks': float,
+                'gas': float,
+                'clothing': float,
+                'recreation': float
+            },
+            'saving': {
+                'car': float,
+                'college': float
+            }
         }],
         'goals': [{
             'category': unicode,
