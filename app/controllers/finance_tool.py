@@ -53,7 +53,7 @@ def tool_main():
 
     return render_template('tool/main.html', saving_series=saving_series, spending_series=spending_series, pie=pie)
 
-@app.route('/tool/setup-goals', methods=['GET', 'POST'])
+@app.route('/tool/goals', methods=['GET', 'POST'])
 @login_required
 def tool_setup_goals():
     user = g.user
