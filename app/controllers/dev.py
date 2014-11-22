@@ -1,4 +1,5 @@
 from app import app, db
+from datetime import datetime
 from flask import render_template_string
 
 
@@ -17,7 +18,16 @@ def main():
 
 def create_users():
     users = [
-        {'username': u'j', 'password': u'j'},
+        {
+            'username': u'j',
+            'password': u'j',
+            'spending_entries': [
+                {
+                    'date': datetime(2014, 11, 1),
+                    'school': 2.0
+                }
+            ]
+        },
         {'username': u'aaron', 'password': u'aaron'},
         {'username': u'ryan', 'password': u'ryan'},
     ]
@@ -26,4 +36,6 @@ def create_users():
         new_user = db.User()
         new_user.username = user['username']
         new_user.password = user['password']
+        for spending_entry in user.spending_entries:
+            new_user.spending_entries = spending_entry
         new_user.save()
