@@ -11,5 +11,17 @@ def render_questions(article_name):
 @app.route('/questions/<article_name>', methods=['GET', 'POST'])
 def render_answers(article_name):
     if request.method == 'POST':
-      for question_id, correct in request.form.iteritems():
-        print question_id, correct
+        num_correct = 0
+        success = False
+
+        for question_id, correct in request.form.iteritems():
+            if correct == True or correct == 'True' or correct == u'True'
+            num_correct+=1
+      
+        if num_correct == 3
+            success = True
+      
+        return render_template('questions.html', num_correct, success)
+
+    else:
+        return render_template('questions.html') 
