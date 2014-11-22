@@ -10,7 +10,7 @@
         How well do you understand the concepts?
       </p>
     </div>
-    <form>
+    <form method="POST">
     {% for question in questions %}
         <div class="row-fluid">
           <div class="col-md-12 info">
@@ -33,7 +33,7 @@
             <div class="col-md-10 intro">
               <p>
               {% for choice in question.choices %}
-                <input type="radio" name="{{ question._id }}" value"{{ choice.text }}">{{ choice.text }}<br>
+                <input type="radio" name="{{ question._id }}" value="{{ choice.correct }}">{{ choice.text }}<br>
               {% endfor %}
               </p>
               <hr>
@@ -45,4 +45,21 @@
     </form>
   </div>
 </div>
+{% if controller_return %}
+<div class="message">
+  <div class="results">
+    {% if success %}
+    <div class="info" style="text-align:center">
+      Congrats on a perfect score!<br>Press Continue to go Home.<br><br>
+      <a href="/home" class="btn btn-lg btn-knowledge">Continue</a>
+    </div>
+    {% else %}
+    <div class="info" style="text-align:center;">
+      You got {{ num_correct }} out of 3 correct.  Give it another go!<br><br>
+      <a href="javascript:history.back()" class="btn btn-lg btn-knowledge">Try Again</a>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
 {% endblock %}
