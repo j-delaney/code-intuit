@@ -1,5 +1,7 @@
+import json
 from flask import render_template_string, render_template, request, url_for, redirect, g
 from datetime import datetime
+from plaid import Client
 from app import app, db
 from app.deco import login_required
 
@@ -46,8 +48,8 @@ def tool_main():
         spending_series.append(spent)
 
     pie = "["
-    for cat, val in enumerate(cat_spendings):
-        pie += '[\"%s\",%d],' % (val, cat)
+    for cat, val in cat_spendings.iteritems():
+        pie += '[\"%s\",%d],' % (cat, val)
     pie = pie[:-1]
     pie += "]"
 
@@ -80,6 +82,53 @@ def tool_setup_goals():
         for goal in user.goals:
             goals[goal['category']] = goal['amount']
     return render_template("tool/goals.html", goals=goals, err=err)
+
+@app.route('/tool/bank')
+@login_required
+def tool_bank():
+    user = g.user
+
+    client = Client(client_id='test_id', secret='test_secret')
+    connect = client.connect(account_type='wells', username='plaid_test', password='plaid_good', email='john@whatever.com')
+
+    if connect.ok:
+        step = client.step(account_type='wells', mfa='tomato')
+
+        if step.ok:
+            data = json.loads(step.content)
+            transactions = data['transactions']
+
+            spent = {
+                'school': 0,
+                'essentials': 0,
+                'snacks': 0,
+                'gas': 0,
+                'clothing': 0,
+                'recreation': 0
+            }
+            for t in transactions:
+                if t['type']['primary'] in ['place', 'digital']:
+                    name = t['name'].lower()
+                    amount = t['amount']
+                    category = analyze_name(name)
+                    spent[category] += amount
+            pie = '['
+            for cat, val in spent.iteritems():
+                pie += '["%s",%d],' % (cat, val)
+            pie = pie[:-1]
+            pie += ']'
+            return render_template('tool/bank.html', pie=pie)
+
+    return render_template_string('Error')
+
+def analyze_name(name):
+    if 'coffee' in name or 'pizza' in name or 'crepes' in name:
+        return 'snacks'
+    elif 'banana republic' == name:
+        return 'clothing'
+    elif 'apple store' == name:
+        return 'recreation'
+    return 'essentials'
 
 @app.route('/tool/daily', methods=['GET', 'POST'])
 @login_required
