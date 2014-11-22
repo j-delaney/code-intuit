@@ -4,6 +4,7 @@
 {% block body %}
   <h1>Statistics</h1><br>
   <div id="chartContainer"></div>
+  <br><br>
   <div id="pie"></div>
 
   <script src="http://code.highcharts.com/highcharts.js"></script>
@@ -18,6 +19,12 @@
             }
           }
         },
+        legend: {
+            itemStyle: {
+                color: '#fff',
+                fontWeight: 'bold',
+            }
+        },
         colors: ['#DC3522','#D9CB9E'],
         chart: {
           backgroundColor: 'rgba(0,0,0,0.3)',
@@ -26,7 +33,6 @@
               fontFamily: 'roboto-reg',
               color: "#fff"
           }
-
         },
         title: {
           style: {
@@ -38,17 +44,16 @@
           enabled: false
         },
         xAxis: {
-          labels: {
-            style: {
-                color: '#fff',
-                fontSize: '1.4em'
-            }
-          },
           lineWidth: 0,
           minorGridLineWidth: 0,
           lineColor: 'transparent',
           labels: {
             enabled: false
+          },
+          title: {
+            style: {
+              color: '#fff'
+            }
           },
           minorTickLength: 0,
           tickLength: 0
