@@ -5,7 +5,7 @@ from mongokit import Document
 @db.register
 class Question(Document):
     __collection__ = 'questions'
-    __database__ = 'sample'
+    __database__ = 'code-intel'
 
     structure = {
         'text': unicode,  # The main text for this question

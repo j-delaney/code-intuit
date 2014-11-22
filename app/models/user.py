@@ -5,7 +5,7 @@ from mongokit import Document
 @db.register
 class User(Document):
     __collection__ = 'users'
-    __database__ = 'sample'
+    __database__ = 'code-intel'
 
     structure = {
         'username': unicode,
