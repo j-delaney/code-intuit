@@ -8,12 +8,13 @@ class Question(Document):
     __database__ = 'sample'
 
     structure = {
-        'text': unicode,
+        'text': unicode,  # The main text for this question
         'choices': [{
             'text': unicode,
             'correct': bool,
             'wrong_explanation': unicode
-        }]
+        }],
+        'article': unicode  # What article this question belongs to
     }
 
     required_fields = ['text', 'choices']
