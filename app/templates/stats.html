@@ -60,7 +60,7 @@ $(function () {
             },
             min: 0,
             title: {
-                text: 'Points',
+                text: 'Completed',
                 style: {
                     color: '#D9CB9E',
                     fontSize: '1.4em'
@@ -76,7 +76,8 @@ $(function () {
             }
         },
         series: [{
-            data: [3,2,3,1,2]
+            showInLegend: false,
+            data: [0,0,1,1,0,1]
         }]
     });
 });
