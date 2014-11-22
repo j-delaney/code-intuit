@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block body %}
+<h1>Login</h1>
+
+{% if err %}
+  <p>Incorrect Login Credentials. Please Try Again.</p>
+{% endif %}
+
+<form role="form" action="login" method="post">
+  <div class="form-group">
+    <label for="inputUsername">Username</label>
+      <input type="text" class="form-control" id="inputUsername" name="username" placeholder="Enter username">
+  </div>
+  <div class="form-group">
+    <label for="inputPassword">Password</label>
+    <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
+  </div>
+
+<button type="submit" class="btn btn-default">Submit</button>
+</form>
+{% endblock %}
