@@ -1,4 +1,5 @@
 from app import db
+from datetime import datetime
 from mongokit import Document
 
 
@@ -11,7 +12,26 @@ class User(Document):
         'username': unicode,
         'password': unicode,
         'points': int,
-        'progress': [unicode]
+        'progress': [unicode],
+        'entries': [{
+            'date': datetime,
+            'spending': {
+                'school': int,
+                'essentials': int,
+                'snacks': int,
+                'gas': int,
+                'clothing': int,
+                'recreation': int
+            },
+            'saving': {
+                'car': int,
+                'college': int
+            }
+        }],
+        'goals': [{
+            'category': unicode,
+            'amount': int
+        }]
     }
 
     required_fields = ['username', 'password', 'points']
