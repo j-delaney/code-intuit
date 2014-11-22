@@ -166,3 +166,7 @@ input[type=submit]:focus {
 .panel-body {
     color: #333;
 }
+
+.form-group {
+    text-align: left;
+}
