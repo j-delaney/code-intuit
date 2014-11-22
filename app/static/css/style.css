@@ -1,5 +1,44 @@
 body {
   background-image: url('../img/tweed.png');
+  margin: auto;
+  padding: 0;
+  height: 100%;
+}
+
+h1 {
+  font-family: 'bebas';
+  font-size: 5em;
+  color: #D9CB9E;
+}
+
+h2 {
+  font-family: 'league-gothic';
+  font-size: 4em;
+}
+
+p {
+  font-family: 'roboto';
+}
+
+.slash {
+  font-weight: bold;
+  color: #DC3522;
+}
+
+.head {
+  font-size: 1.4em;
+  font-family: 'roboto';
+}
+
+.info {
+  padding: 10px;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 2px;
+}
+
+.info p {
+  color: #FFF;
+  text-align: justify;
 }
 
 #logoBar {
@@ -26,6 +65,16 @@ body {
 }
 
 @font-face {
+  font-family: 'league-gothic';
+  src: url('../fonts/LeagueGothic-Regular.otf');
+}
+
+@font-face {
   font-family: 'bebas';
   src: url('../fonts/BebasNeue.otf');
+}
+
+@font-face {
+  font-family: 'roboto';
+  src: url('../fonts/Roboto-Regular.ttf');
 }
