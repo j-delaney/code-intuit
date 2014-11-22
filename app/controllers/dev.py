@@ -12,8 +12,32 @@ def main():
         item.delete()
 
     create_users()
+    create_questions()
 
     return render_template_string("It worked :)")
+
+def create_questions():
+    questions = [
+        {
+            'text': u'QUESTION TEXT',
+            'choices': [
+                {
+                    'text': u'ANSWER TEXT',
+                    'correct': False,
+                    'wrong_explanation': u'WRONG_EXPAILN'
+                }
+            ],
+            'article': u'ARTICLE_NAME'
+        }
+    ]
+
+    for question in questions:
+        new_q = db.Question()
+        new_q.text = question.text
+        new_q.article = question.article
+        new_q.choices = question.choices
+        new_q.save()
+
 
 def create_users():
     users = [
