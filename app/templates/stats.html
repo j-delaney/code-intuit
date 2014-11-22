@@ -77,7 +77,33 @@ $(function () {
         },
         series: [{
             showInLegend: false,
-            data: [0,0,1,1,0,1]
+            data: [
+            {% set retirement = 0 %}
+            {% set plastic = 0 %}
+            {% set borrowing = 0 %}
+            {% set expenditures = 0 %}
+            {% set income = 0 %}
+            {% set budgeting = 0 %}
+            {% for article in user.progress %}
+              {% if article == retirement %}
+                {% do retirement = 1 %}
+              {% else if article == plastic %}
+                {% do plastic = 1 %}
+              {% else if article == borrowing %}
+                {% do borrowing = 1 %}
+              {% else if article == expenditures %}
+                {% do expenditures = 1 %}
+              {% else if article == income %}
+                {% do income = 1 %}
+              {% else if article == budgeting %}
+                {% do budgeting = 1 %}
+            {% endfor %}
+            {{ retirement }},
+            {{ plastic }},
+            {{ borrowing }},
+            {{ expenditures }},
+            {{ income }},
+            {{ budgeting }}]
         }]
     });
 });
