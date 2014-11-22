@@ -11,24 +11,60 @@
   <script type="text/javascript">
     $(function () {
       $('#chartContainer').highcharts({
+        plotOptions: {
+          series: {
+            style: {
+              color: '#fff'
+            }
+          }
+        },
+        colors: ['#DC3522','#D9CB9E'],
         chart: {
-          type: 'line'
+          backgroundColor: 'rgba(0,0,0,0.3)',
+          type: 'line',
+          style: {
+              fontFamily: 'roboto-reg',
+              color: "#fff"
+          }
+
         },
         title: {
+          style: {
+            color: '#fff'
+          },
           text: 'Spending/Saving Trends'
         },
         credits: {
           enabled: false
         },
         xAxis: {
+          labels: {
+            style: {
+                color: '#fff',
+                fontSize: '1.4em'
+            }
+          },
           lineWidth: 0,
           minorGridLineWidth: 0,
           lineColor: 'transparent',
-                labels: {
-                enabled: false
-              },
+          labels: {
+            enabled: false
+          },
           minorTickLength: 0,
           tickLength: 0
+        },
+        yAxis: {
+          title: {
+            style: {
+                color: '#fff',
+                fontSize: '1.4em'
+            }
+          },
+          labels: {
+            style: {
+                color: '#fff',
+            }
+          }
         },
         series: [{
           name: 'Saving',
@@ -40,10 +76,15 @@
       });
 
       $('#pie').highcharts({
+        colors: ['#2A2C2B','#D9CB9E','#1E1E20','#DC3522','#374140'],
         chart: {
+          backgroundColor: 'rgba(0,0,0,0.3)',
           type: 'pie'
         },
         plotOptions: {
+          line: {
+            color: '#fff'
+          },
           pie: {
             allowPointSelect: true,
             cursor: 'pointer',
@@ -51,12 +92,15 @@
               enabled: true,
               format: '<b>{point.name}</b>: {point.percentage:.1f} %',
               style: {
-                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                color: '#fff'
               }
             }
           }
         },
         title: {
+          style: {
+            color: '#fff'
+          },
           text: 'Where your money is going'
         },
         tooltip: {
