@@ -13,8 +13,21 @@
         chart: {
           type: 'line'
         },
+        title: {
+          text: 'Spending/Saving Trends'
+        },
         credits: {
           enabled: false
+        },
+        xAxis: {
+          lineWidth: 0,
+          minorGridLineWidth: 0,
+          lineColor: 'transparent',
+                labels: {
+                enabled: false
+              },
+          minorTickLength: 0,
+          tickLength: 0
         },
         series: [{
           name: 'Saving',
@@ -28,6 +41,25 @@
       $('#pie').highcharts({
         chart: {
           type: 'pie'
+        },
+        plotOptions: {
+          pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+              enabled: true,
+              format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+              style: {
+                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+              }
+            }
+          }
+        },
+        title: {
+          text: 'Where your money is going'
+        },
+        tooltip: {
+          pointFormat: '<b>{point.percentage:.1f}%</b>'
         },
         credits: {
           enabled: false
