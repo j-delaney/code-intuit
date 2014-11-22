@@ -45,4 +45,19 @@
     </form>
   </div>
 </div>
+{% if controller_return %}
+<div class="message">
+  <div class="results">
+    {% if success %}
+    <div class="info">
+      Congrats Brah
+    </div>
+    {% else %}
+    <div class="info">
+      Ohh.  Oh man.  That was not quite on point.  Sorry dude man.
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
 {% endblock %}
