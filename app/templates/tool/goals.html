@@ -15,7 +15,7 @@
           <label for="clothing">Clothing</label>
           <div class="input-group">
             <span class="input-group-addon">$</span>
-            <input type="number" class="form-control" id="clothing" name="clothing">
+            <input type="number" class="form-control" id="clothing" name="clothing" value="{{ goals['clothing']|default('') }}">
             <span class="input-group-addon">.00</span>
           </div>
         </div>
@@ -24,7 +24,7 @@
           <label for="gas">Gas</label>
           <div class="input-group">
             <span class="input-group-addon">$</span>
-            <input type="number" class="form-control" id="gas" name="gas">
+            <input type="number" class="form-control" id="gas" name="gas" value="{{ goals['gas']|default('') }}">
             <span class="input-group-addon">.00</span>
           </div>
         </div>
@@ -33,7 +33,7 @@
           <label for="school">School</label>
           <div class="input-group">
             <span class="input-group-addon">$</span>
-            <input type="number" class="form-control" id="school" name="school">
+            <input type="number" class="form-control" id="school" name="school" value="{{ goals['school']|default('') }}">
             <span class="input-group-addon">.00</span>
           </div>
         </div>
@@ -42,7 +42,7 @@
           <label for="essentials">Essentials</label>
           <div class="input-group">
             <span class="input-group-addon">$</span>
-            <input type="number" class="form-control" id="essentials" name="essentials">
+            <input type="number" class="form-control" id="essentials" name="essentials" value="{{ goals['essentials']|default('') }}">
             <span class="input-group-addon">.00</span>
           </div>
         </div>
@@ -51,7 +51,7 @@
           <label for="snacks">Snacks</label>
           <div class="input-group">
             <span class="input-group-addon">$</span>
-            <input type="number" class="form-control" id="snacks" name="snacks">
+            <input type="number" class="form-control" id="snacks" name="snacks" value="{{ goals['snacks']|default('') }}">
             <span class="input-group-addon">.00</span>
           </div>
         </div>
@@ -60,7 +60,7 @@
           <label for="recreation">Recreation</label>
           <div class="input-group">
             <span class="input-group-addon">$</span>
-            <input type="number" class="form-control" id="recreation" name="recreation">
+            <input type="number" class="form-control" id="recreation" name="recreation" value="{{ goals['recreation']|default('') }}">
             <span class="input-group-addon">.00</span>
           </div>
         </div>
@@ -80,7 +80,7 @@
             <label for="car">Car</label>
             <div class="input-group">
               <span class="input-group-addon">$</span>
-              <input type="number" class="form-control" id="car" name="car">
+              <input type="number" class="form-control" id="car" name="car" value="{{ goals['car']|default('') }}">
               <span class="input-group-addon">.00</span>
             </div>
           </div>
@@ -89,7 +89,7 @@
             <label for="college">College</label>
             <div class="input-group">
               <span class="input-group-addon">$</span>
-              <input type="number" class="form-control" id="college" name="college">
+              <input type="number" class="form-control" id="college" name="college" value="{{ goals['college']|default('') }}">
               <span class="input-group-addon">.00</span>
             </div>
           </div>

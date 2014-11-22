@@ -15,9 +15,10 @@ def tool_setup_goals():
     err = None
 
     if request.method == 'POST':
-        user.goals = []
+        user['goals'] = []
 
         for category, value in request.form.iteritems():
+            category = unicode(category)
             value = value.strip()
             if value != u'':
                 try:
@@ -28,7 +29,12 @@ def tool_setup_goals():
         user.save()
         if not err:
             return redirect(url_for('tool_main'))
-    return render_template("tool/goals.html", user=user, err=err)
+
+    goals = {}
+    if 'goals' in user:
+        for goal in user.goals:
+            goals[goal['category']] = goal['amount']
+    return render_template("tool/goals.html", goals=goals, err=err)
 
 @app.route('/tool/input-daily')
 @login_required
