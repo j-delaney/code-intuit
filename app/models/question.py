@@ -11,8 +11,7 @@ class Question(Document):
         'text': unicode,  # The main text for this question
         'choices': [{
             'text': unicode,
-            'correct': bool,
-            'wrong_explanation': unicode
+            'correct': bool
         }],
         'article': unicode  # What article this question belongs to
     }

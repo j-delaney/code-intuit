@@ -18,19 +18,25 @@
               Q:
             </div>
             <div class="col-md-10 intro">
+              <br>
               <p>
                 {{ question.text }}
               </p>
             </div>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="col-md-12 info">
             <div class="col-md-2 letterQ">
               A:
             </div>
             <div class="col-md-10 intro">
               <p>
               {% for choice in question.choices %}
-                <input type="radio" name="{{ question._id }}" value"{{ question.text }}">{{ question.text }}
+                <input type="radio" name="{{ question._id }}" value"{{ choice.text }}">{{ choice.text }}<br>
               {% endfor %}
               </p>
+              <hr>
             </div>
           </div>
         </div>
