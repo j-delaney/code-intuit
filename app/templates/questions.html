@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Question{% endblock %}
+
+{% block body %}
+<div class="container">
+  <h1><span class="slash">//</span> Knowledge Test</h1>
+  <div class="row-fluid">
+    <div class="col-md-12 intro">
+      <p>
+        How well do you understand the concepts?
+      </p>
+    </div>
+    {% for question in questions %}
+        <div class="row-fluid">
+          <div class="col-md-12 info">
+            <div class="col-md-2 letterQ">
+              Q:
+            </div>
+            <div class="col-md-10 intro">
+              <p>
+                {{ question.text }}
+              </p>
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
