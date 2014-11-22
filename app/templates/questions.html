@@ -10,6 +10,7 @@
         How well do you understand the concepts?
       </p>
     </div>
+    <form>
     {% for question in questions %}
         <div class="row-fluid">
           <div class="col-md-12 info">
@@ -21,9 +22,21 @@
                 {{ question.text }}
               </p>
             </div>
+            <div class="col-md-2 letterQ">
+              A:
+            </div>
+            <div class="col-md-10 intro">
+              <p>
+              {% for choice in question.choices %}
+                <input type="radio" name="{{ question._id }}" value"{{ question.text }}">{{ question.text }}
+              {% endfor %}
+              </p>
+            </div>
           </div>
         </div>
     {% endfor %}
+    <input type="submit" clas="btn btn-lf btn-knowledge" value="Submit">
+    </form>
   </div>
 </div>
 {% endblock %}
