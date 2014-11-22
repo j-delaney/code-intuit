@@ -22,7 +22,7 @@ def render_answers(article_name):
         if num_correct == 3:
             success = True
       
-        return render_template('questions.html', num_correct, success, controller_return)
+        return render_template('questions.html', num_correct=num_correct, success=success, controller_return=controller_return)
 
     else:
         return render_template('questions.html') 
