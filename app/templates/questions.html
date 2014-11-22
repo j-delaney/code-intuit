@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Question{% endblock %}
+
+{% block body %}
+<div class="container">
+  <h1><span class="slash">//</span> Knowledge Test</h1>
+  <div class="row-fluid">
+    <div class="col-md-12 intro">
+      <p>
+        How well do you understand the concepts?
+      </p>
+    </div>
+    <form>
+    {% for question in questions %}
+        <div class="row-fluid">
+          <div class="col-md-12 info">
+            <div class="col-md-2 letterQ">
+              Q:
+            </div>
+            <div class="col-md-10 intro">
+              <br>
+              <p>
+                {{ question.text }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="col-md-12 info">
+            <div class="col-md-2 letterQ">
+              A:
+            </div>
+            <div class="col-md-10 intro">
+              <p>
+              {% for choice in question.choices %}
+                <input type="radio" name="{{ question._id }}" value"{{ choice.text }}">{{ choice.text }}<br>
+              {% endfor %}
+              </p>
+              <hr>
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+    <input type="submit" clas="btn btn-lf btn-knowledge" value="Submit">
+    </form>
+  </div>
+</div>
+{% endblock %}
