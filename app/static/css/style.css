@@ -104,6 +104,11 @@ input[type=submit]:focus {
   font-size: 5em;
 }
 
+.side {
+  background-color: rgba(0,0,0,0.2);
+  height: 550px;
+}
+
 #logoButtonA {
   padding: 0;
   margin: 0;
@@ -136,6 +141,36 @@ input[type=submit]:focus {
   font-family: 'bebas';
   text-shadow: 0 0 1px #000;
   color: #DC3522;
+}
+
+#financeBtn {
+  background-color: #2A2C2B;
+  display: block;
+  vertical-align: center;
+  line-height: 150px;
+  padding:0;
+  width: 100%;
+  margin: 20px auto;
+  font-family: 'bebas';
+  height: 150px;
+  font-size: 5em;
+}
+
+#financeBtn:hover {
+  background-color: #DC3522;
+  text-decoration: none;
+}
+
+#articleList {
+  list-style-type: none;
+  font-family: 'roboto-thin';
+  font-size: 2.5em;
+}
+
+#articleList a:hover{
+  text-decoration: none;
+  color: #DC3522;
+  text-shadow: 0 0 2px rgba(0,0,0,0.5);
 }
 
 @font-face {

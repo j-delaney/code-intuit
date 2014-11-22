@@ -3,7 +3,7 @@ from app.deco import login_required
 from flask import render_template, request, g
 
 @app.route('/questions/<article_name>')
-@login_required()
+@login_required
 def render_questions(article_name):
     user = g.user
     questions = db.Question.find({'article':article_name})
@@ -12,7 +12,7 @@ def render_questions(article_name):
     return render_template('questions.html', questions = questions)
 
 @app.route('/questions/<article_name>', methods=['GET', 'POST'])
-@login_required()
+@login_required
 def render_answers(article_name):
     user = g.user
     if request.method == 'POST':

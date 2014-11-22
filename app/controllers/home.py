@@ -3,7 +3,7 @@ from app.deco import login_required
 from flask import render_template
 
 @app.route('/home')
-@login_required()
+@login_required
 def home():
     listVar = g.user.progress
     listVar = list(set(listVar))
