@@ -17,9 +17,9 @@ def main():
 
 def create_users():
     users = [
-        {'username': 'j', 'password': 'j'},
-        {'username': 'aaron', 'password': 'aaron'},
-        {'username': 'ryan', 'password': 'ryan'},
+        {'username': u'j', 'password': u'j'},
+        {'username': u'aaron', 'password': u'aaron'},
+        {'username': u'ryan', 'password': u'ryan'},
     ]
 
     for user in users:
