@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Financial Planning Tool{% endblock %}
+
+{% block body %}
+  <div id="pie"></div>
+
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="http://code.highcharts.com/modules/exporting.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $('#pie').highcharts({
+        chart: {
+          type: 'pie'
+        },
+        plotOptions: {
+          pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+              enabled: true,
+              format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+              style: {
+                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+              }
+            }
+          }
+        },
+        title: {
+          text: 'Bank Transaction Analysis'
+        },
+        tooltip: {
+          pointFormat: '<b>{point.percentage:.1f}%</b>'
+        },
+        credits: {
+          enabled: false
+        },
+        series: [{
+          data: {{ pie|safe }}
+        }]
+      });
+    });
+  </script>
+{% endblock %}
