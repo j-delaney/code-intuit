@@ -10,7 +10,7 @@
         How well do you understand the concepts?
       </p>
     </div>
-    <form>
+    <form method="POST">
     {% for question in questions %}
         <div class="row-fluid">
           <div class="col-md-12 info">
@@ -33,7 +33,7 @@
             <div class="col-md-10 intro">
               <p>
               {% for choice in question.choices %}
-                <input type="radio" name="{{ question._id }}" value"{{ choice.text }}">{{ choice.text }}<br>
+                <input type="radio" name="{{ question._id }}" value="{{ choice.correct }}">{{ choice.text }}<br>
               {% endfor %}
               </p>
               <hr>
