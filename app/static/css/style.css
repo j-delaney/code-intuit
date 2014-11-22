@@ -55,6 +55,12 @@ p {
   font-size: 3em;
 }
 
+.letterQ {
+  font-family: 'roboto-reg';
+  color: #DC3522;
+  font-size: 5em;
+}
+
 #logoButtonA {
   padding: 0;
   margin: 0;
