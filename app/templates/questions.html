@@ -49,12 +49,14 @@
 <div class="message">
   <div class="results">
     {% if success %}
-    <div class="info">
-      Congrats Brah
+    <div class="info" style="text-align:center">
+      Congrats on a perfect score!<br>Press Continue to go Home.<br><br>
+      <a href="/home" class="btn btn-lg btn-knowledge">Continue</a>
     </div>
     {% else %}
-    <div class="info">
-      Ohh.  Oh man.  That was not quite on point.  Sorry dude man.
+    <div class="info" style="text-align:center;">
+      You got {{ num_correct }} out of 3 correct.  Give it another go!<br><br>
+      <a href="javascript:history.back()" class="btn btn-lg btn-knowledge">Try Again</a>
     </div>
     {% endif %}
   </div>
