@@ -1,8 +1,5 @@
 body {
   background-image: url('../img/tweed.png');
-  margin: auto;
-  padding: 0;
-  height: 100%;
 }
 
 h1 {
@@ -17,7 +14,7 @@ h2 {
 }
 
 p {
-  font-family: 'roboto';
+  font-family: 'roboto-thin';
 }
 
 .slash {
@@ -25,20 +22,53 @@ p {
   color: #DC3522;
 }
 
-.head {
+.intro {
   font-size: 1.4em;
-  font-family: 'roboto';
 }
 
 .info {
-  padding: 10px;
+  padding: 40px;
   background-color: rgba(0,0,0,0.4);
   border-radius: 2px;
 }
 
 .info p {
   color: #FFF;
+  font-family: 'roboto-thin';
+  font-weight: bold;
   text-align: justify;
+}
+
+.info ul, .info li {
+  text-align: left;
+  font-weight: normal;
+}
+
+.btn-knowledge,
+.btn-knowledge:hover,
+.btn-knowledge:focus {
+  color: #FFF;
+  text-shadow: none;
+  background-color: #DC3522;
+  box-shadow: 0px 0px 2px #1E1E20;
+  font-family: 'amatic';
+  font-size: 3em;
+}
+
+#logoButtonA {
+  padding: 0;
+  margin: 0;
+  font-family: 'amatic';
+  font-size: 1.7em;
+  color: #D9CB9E;
+}
+
+#logoButtonB {
+  padding: 0;
+  margin: 0;
+  font-family: 'bebas';
+  font-size: 1.7em;
+  color: #DC3522;
 }
 
 #logoBar {
@@ -75,6 +105,11 @@ p {
 }
 
 @font-face {
-  font-family: 'roboto';
+  font-family: 'roboto-thin';
+  src: url('../fonts/Roboto-Thin.ttf');
+}
+
+@font-face {
+  font-family: 'roboto-reg';
   src: url('../fonts/Roboto-Regular.ttf');
 }
