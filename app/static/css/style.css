@@ -138,6 +138,27 @@ input[type=submit]:focus {
   color: #DC3522;
 }
 
+#financeBtn {
+  background-color: #2A2C2B;
+  width: 80%;
+  margin: 0 auto;
+  font-family: 'bebas';
+  height: 200px;
+  font-size: 7em;
+}
+
+#articleList {
+  list-style-type: none;
+  font-family: 'bebas';
+  font-size: 3em;
+}
+
+#articleList a:hover{
+  text-decoration: none;
+  color: #DC3522;
+  text-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+
 @font-face {
   font-family: 'amatic';
   src: url('../fonts/AmaticSC-Regular.ttf');
