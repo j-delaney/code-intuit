@@ -16,21 +16,21 @@ class User(Document):
         'entries': [{
             'date': datetime,
             'spending': {
-                'school': float,
-                'essentials': float,
-                'snacks': float,
-                'gas': float,
-                'clothing': float,
-                'recreation': float
+                'school': int,
+                'essentials': int,
+                'snacks': int,
+                'gas': int,
+                'clothing': int,
+                'recreation': int
             },
             'saving': {
-                'car': float,
-                'college': float
+                'car': int,
+                'college': int
             }
         }],
         'goals': [{
             'category': unicode,
-            'amount': float
+            'amount': int
         }]
     }
 
