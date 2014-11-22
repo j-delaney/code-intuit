@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}Retirement{% endblock %}
+
+{% block body %}
+<div class="container">
+  <h1><span class="slash">//</span> Your Progress</h1>
+  <br><br>
+  <div class="row-fluid">
+    <div class="col-md-12, intro">
+      <p>
+        You've worked hard to get here.  Where can you improve?
+      </p>
+    </div>
+  </div>
+  <br><br>
+  <div id="chartContainer">
+  <div>
+</div>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script type="text/javascript">
+$(function () {
+    $('#chartContainer').highcharts({
+        colors: ['#DC3522'],
+        chart: {
+            backgroundColor: 'rgba(0,0,0,0.3)',
+            type: 'column',
+            style: {
+                fontFamily: 'roboto-reg',
+                color: "#fff"
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        title: {
+            text: 'Monthly Average Rainfall'
+        },
+        xAxis: {
+            labels: {
+              style: {
+                  color: '#D9CB9E',
+                  fontSize: '1.4em'
+              }
+            },
+            categories: [
+                'Retirement Funds',
+                'Plastic Money',
+                'Borrowing Funds',
+                'Common Expenditures',
+                'Income',
+                'Budgeting'
+            ]
+        },
+        yAxis: {
+            labels: {
+              style: {
+                  color: '#D9CB9E'
+              }
+            },
+            min: 0,
+            title: {
+                text: 'Points',
+                style: {
+                    color: '#D9CB9E',
+                    fontSize: '1.4em'
+                }
+            }
+        },
+        tooltip: {
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            data: [3,2,3,1,2]
+        }]
+    });
+});
+</script>
+
+{% endblock %}
