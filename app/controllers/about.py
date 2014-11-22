@@ -3,5 +3,9 @@ from flask import render_template
 
 
 @app.route('/about')
-def render():
-        return render_template('about.html')
+def render_about():
+    return render_template('about.html')
+
+@app.route('/about-us')
+def render_about_us():
+    return render_template('about-us.html')
