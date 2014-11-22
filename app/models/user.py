@@ -14,7 +14,7 @@ class User(Document):
         'progress': [unicode]
     }
 
-    required_fields = ['username', 'password', 'points', 'progress']
+    required_fields = ['username', 'password', 'points']
     default_values = {
         'points': 0,
         'progress': []
