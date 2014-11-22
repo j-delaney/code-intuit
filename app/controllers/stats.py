@@ -1,14 +1,14 @@
 from app import app, db
 from app.deco import login_required
-from flask import render_template
+from flask import render_template, g
 
 @app.route('/stats')
-@login_required()
+@login_required
 def render():
     listVar = g.user.progress
     listVar = list(set(listVar))
 
-    listPass = []
+    listPass = [0] * 6
 
     for temp in listVar:
         if temp == u'retirement':
