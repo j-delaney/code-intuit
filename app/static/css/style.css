@@ -162,3 +162,7 @@ input[type=submit]:focus {
   font-family: 'roboto-reg';
   src: url('../fonts/Roboto-Regular.ttf');
 }
+
+.panel-body {
+    color: #333;
+}

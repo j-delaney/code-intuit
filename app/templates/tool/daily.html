@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block title %}Financial Planning Tool{% endblock %}
+
+{% block body %}
+  <h1>Daily Input</h1>
+  <p>Use this page to update how your spending has gone for the day</p>
+
+  <form role="form" action="daily" method="POST">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Today I spent...</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-2">
+            <label for="clothing">Clothing</label>
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input type="number" class="form-control" id="clothing" name="clothing" value="{{ daily['spending']['clothing']|default('0') }}">
+              <span class="input-group-addon">.00</span>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <label for="gas">Gas</label>
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input type="number" class="form-control" id="gas" name="gas" value="{{ daily['spending']['gas']|default('0') }}">
+              <span class="input-group-addon">.00</span>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <label for="school">School</label>
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input type="number" class="form-control" id="school" name="school" value="{{ daily['spending']['school']|default('0') }}">
+              <span class="input-group-addon">.00</span>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <label for="essentials">Essentials</label>
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input type="number" class="form-control" id="essentials" name="essentials" value="{{ daily['spending']['essentials']|default('0') }}">
+              <span class="input-group-addon">.00</span>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <label for="snacks">Snacks</label>
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input type="number" class="form-control" id="snacks" name="snacks" value="{{ daily['spending']['snacks']|default('0') }}">
+              <span class="input-group-addon">.00</span>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <label for="recreation">Recreation</label>
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input type="number" class="form-control" id="recreation" name="recreation" value="{{ daily['spending']['recreation']|default('0') }}">
+              <span class="input-group-addon">.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Today I put away into savings...</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-2">
+            <label for="car">Car</label>
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input type="number" class="form-control" id="car" name="car" value="{{ daily['saving']['car']|default('0') }}">
+              <span class="input-group-addon">.00</span>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <label for="college">College</label>
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input type="number" class="form-control" id="college" name="college" value="{{ daily['saving']['college']|default('0') }}">
+              <span class="input-group-addon">.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-default">Save</button>
+  </form>
+
+{% endblock %}
