@@ -78,3 +78,7 @@ p {
   font-family: 'roboto';
   src: url('../fonts/Roboto-Regular.ttf');
 }
+
+.panel-body {
+    color: #333;
+}
