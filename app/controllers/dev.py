@@ -21,7 +21,7 @@ def create_users():
         {
             'username': u'j',
             'password': u'j',
-            'spending_entries': [
+            'entries': [
                 {
                     'date': datetime(2014, 11, 1),
                     'school': 2.0
@@ -36,6 +36,6 @@ def create_users():
         new_user = db.User()
         new_user.username = user['username']
         new_user.password = user['password']
-        for spending_entry in user.spending_entries:
-            new_user.spending_entries = spending_entry
+        if user.entries:
+            new_user.entries = user.entries
         new_user.save()
