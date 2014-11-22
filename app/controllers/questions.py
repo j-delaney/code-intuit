@@ -1,10 +1,9 @@
 from app import app, db
 from flask import render_template
 
-@app.route('/questions')
-def render_questions():
-    
-    
+@app.route('/questions/<article_name>')
+def render_questions(article_name):
+    questions = db.Question.find({'article':article_name})
+    list(questions)
     
     return render_template('questions.html')
-
