@@ -8,12 +8,15 @@ class User(Document):
     __database__ = 'sample'
 
     structure = {
-        'name': unicode,
-        'visits': int
+        'username': unicode,
+        'password': unicode,
+        'points': int,
+        'progress': [unicode]
     }
 
-    required_fields = ['name']
+    required_fields = ['username', 'password', 'points', 'progress']
     default_values = {
-        'visits': 0
+        'points': 0,
+        'progress': []
     }
     use_dot_notation = True
