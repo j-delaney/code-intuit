@@ -1,0 +1,31 @@
+body {
+  background-image: url('../img/tweed.png');
+}
+
+#logoBar {
+  width: auto;
+  height: 100px;
+  background-color: #fff;
+}
+
+#logo {
+  font-family: 'amatic';
+  font-size: 7em;
+  color: #D9CB9E;
+}
+
+#logo span {
+  font-family: 'bebas';
+  text-shadow: 0 0 1px #000;
+  color: #DC3522;
+}
+
+@font-face {
+  font-family: 'amatic';
+  src: url('../fonts/AmaticSC-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'bebas';
+  src: url('../fonts/BebasNeue.otf');
+}
