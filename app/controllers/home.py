@@ -5,8 +5,33 @@ from flask import render_template
 @app.route('/home')
 @login_required()
 def home():
-    user = g.user
-    return render_template('home.html', user = user)
+    listVar = g.user.progress
+    listVar = list(set(listVar))
+
+    listPass = []
+
+    for temp in listVar:
+        if temp == u'retirement':
+            listPass[0] = 1
+
+        if temp == u'plastic':
+            listPass[1] = 1
+
+        if temp == u'borrowing':
+            listPass[2] = 1
+
+        if temp == u'expenditures':
+            listPass[3] = 1
+
+        if temp == u'income':
+            listPass[4] = 1
+
+        if temp == u'budgeting':
+            listPass[5] = 1
+
+
+
+    return render_template('home.html', listPass = listPass) 
 
 @app.route('/')
 def index():
