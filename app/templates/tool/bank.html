@@ -2,6 +2,7 @@
 {% block title %}Financial Planning Tool{% endblock %}
 
 {% block body %}
+  <h1>Bank Transaction Analysis</h1><br>
   <div id="pie"></div>
 
   <script src="http://code.highcharts.com/highcharts.js"></script>
@@ -9,7 +10,9 @@
   <script type="text/javascript">
     $(function () {
       $('#pie').highcharts({
+        colors: ['#DC3522','#2A2C2B','#D9CB9E','#1E1E20','#DC3522','#374140'],
         chart: {
+          backgroundColor: 'rgba(0,0,0,0.3)',
           type: 'pie'
         },
         plotOptions: {
@@ -20,13 +23,10 @@
               enabled: true,
               format: '<b>{point.name}</b>: {point.percentage:.1f} %',
               style: {
-                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                color: '#fff'
               }
             }
           }
-        },
-        title: {
-          text: 'Bank Transaction Analysis'
         },
         tooltip: {
           pointFormat: '<b>{point.percentage:.1f}%</b>'
