@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block title %}Financial Planning Tool{% endblock %}
+
+{% block body %}
+  <form role="form" action="setup-goals" method="POST">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Spending Limit Goals</h3>
+      </div>
+      <div class="panel-body">
+      <p>The goals you set here reflect the maximum you want to spend each day on these items. Leave blank to set no goal.</p>
+
+      <div class="row">
+        <div class="col-md-2">
+          <label for="clothing">Clothing</label>
+          <div class="input-group">
+            <span class="input-group-addon">$</span>
+            <input type="number" class="form-control" id="clothing" name="clothing">
+            <span class="input-group-addon">.00</span>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <label for="gas">Gas</label>
+          <div class="input-group">
+            <span class="input-group-addon">$</span>
+            <input type="number" class="form-control" id="gas" name="gas">
+            <span class="input-group-addon">.00</span>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <label for="school">School</label>
+          <div class="input-group">
+            <span class="input-group-addon">$</span>
+            <input type="number" class="form-control" id="school" name="school">
+            <span class="input-group-addon">.00</span>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <label for="essentials">Essentials</label>
+          <div class="input-group">
+            <span class="input-group-addon">$</span>
+            <input type="number" class="form-control" id="essentials" name="essentials">
+            <span class="input-group-addon">.00</span>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <label for="snacks">Snacks</label>
+          <div class="input-group">
+            <span class="input-group-addon">$</span>
+            <input type="number" class="form-control" id="snacks" name="snacks">
+            <span class="input-group-addon">.00</span>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <label for="recreation">Recreation</label>
+          <div class="input-group">
+            <span class="input-group-addon">$</span>
+            <input type="number" class="form-control" id="recreation" name="recreation">
+            <span class="input-group-addon">.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Saving Goals</h3>
+      </div>
+      <div class="panel-body">
+        <p>Description here</p>
+
+        <div class="row">
+          <div class="col-md-2">
+            <label for="car">Car</label>
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input type="number" class="form-control" id="car" name="car">
+              <span class="input-group-addon">.00</span>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <label for="college">College</label>
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input type="number" class="form-control" id="college" name="college">
+              <span class="input-group-addon">.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-default">Save</button>
+  </form>
+{% endblock %}
